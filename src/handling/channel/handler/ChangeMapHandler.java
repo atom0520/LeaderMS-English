@@ -55,7 +55,7 @@ public class ChangeMapHandler extends AbstractMaplePacketHandler {
                 MaplePacket packet = MaplePacketCreator.getChannelChange(
                         InetAddress.getByName(socket[0]), Integer.parseInt(socket[1]));
                 c.getSession().write(packet);
-                c.getSession().close();
+                //c.getSession().close();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

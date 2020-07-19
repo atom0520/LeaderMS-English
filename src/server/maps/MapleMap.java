@@ -4612,9 +4612,9 @@ public class MapleMap {
             for (MapleMapObject mo : visibleObjectsNow) {
                 if (mo != null) {
                     if (mapobjects.get(mo.getObjectId()) == mo) {
-                        updateMapObjectVisibility(player, mo);
+                        //updateMapObjectVisibility(player, mo);
                     } else {
-                        player.removeVisibleMapObject(mo);
+                        //player.removeVisibleMapObject(mo);
                     }
                 }
             }
