@@ -90,7 +90,17 @@ public class DatabaseConnection {
         if (props == null) {
             throw new RuntimeException("DatabaseConnection not initialized");
         }
-        return con.get();
+        Connection connection = con.get();
+        try {
+            if (!connection.isValid(0) || connection.isClosed()) {
+                connection.close();
+                con.remove();
+                connection = con.get();
+            }
+        } catch (SQLException e) {
+            log.error("ERROR", e);
+        }
+        return connection;
     }
 
     public static boolean isInitialized() {
@@ -122,6 +132,7 @@ public class DatabaseConnection {
             }
             try {
                 Connection con = DriverManager.getConnection(props.getProperty("url"), props.getProperty("user"), props.getProperty("pass"));
+
                 allConnections.add(con);
                 return con;
             } catch (SQLException e) {

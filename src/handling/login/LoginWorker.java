@@ -110,6 +110,7 @@ public class LoginWorker implements Runnable {
 			}
 			LoginServer.getInstance().setLoad(load);
 		} catch (RemoteException ex) {
+			System.out.println("RemoteException occurred " + ex);
 			LoginServer.getInstance().reconnectWorld();
 		}
 	}

@@ -7630,7 +7630,7 @@
 			<int name="tm" value="999999999"/>
 			<string name="tn" value=""/>
 		</imgdir>
-		<imgdir name="11">
+		<imgdir name="9">
 			<string name="pn" value="hide03"/>
 			<int name="pt" value="1"/>
 			<int name="x" value="1622"/>
@@ -7638,7 +7638,7 @@
 			<int name="tm" value="100000200"/>
 			<string name="tn" value="in01"/>
 		</imgdir>
-		<imgdir name="12">
+		<imgdir name="10">
 			<string name="pn" value="in01"/>
 			<int name="pt" value="1"/>
 			<int name="x" value="1728"/>
@@ -7646,7 +7646,7 @@
 			<int name="tm" value="100000202"/>
 			<string name="tn" value="out00"/>
 		</imgdir>
-		<imgdir name="13">
+		<imgdir name="11">
 			<string name="pn" value="event00"/>
 			<int name="pt" value="1"/>
 			<int name="x" value="1255"/>
@@ -7654,7 +7654,7 @@
 			<int name="tm" value="999999999"/>
 			<string name="tn" value=""/>
 		</imgdir>
-		<imgdir name="14">
+		<imgdir name="12">
 			<string name="pn" value="event01"/>
 			<int name="pt" value="1"/>
 			<int name="x" value="1269"/>
@@ -7662,7 +7662,7 @@
 			<int name="tm" value="999999999"/>
 			<string name="tn" value=""/>
 		</imgdir>
-		<imgdir name="15">
+		<imgdir name="13">
 			<string name="pn" value="event02"/>
 			<int name="pt" value="1"/>
 			<int name="x" value="1379"/>
@@ -7670,7 +7670,7 @@
 			<int name="tm" value="999999999"/>
 			<string name="tn" value=""/>
 		</imgdir>
-		<imgdir name="16">
+		<imgdir name="14">
 			<string name="pn" value="wd00"/>
 			<int name="pt" value="1"/>
 			<int name="x" value="2934"/>
@@ -7678,7 +7678,7 @@
 			<int name="tm" value="999999999"/>
 			<string name="tn" value=""/>
 		</imgdir>
-		<imgdir name="17">
+		<imgdir name="15">
 			<string name="pn" value="out00"/>
 			<int name="pt" value="2"/>
 			<int name="x" value="41"/>
@@ -7686,7 +7686,7 @@
 			<int name="tm" value="100000000"/>
 			<string name="tn" value="in01"/>
 		</imgdir>
-		<imgdir name="18">
+		<imgdir name="16">
 			<string name="pn" value="out01"/>
 			<int name="pt" value="2"/>
 			<int name="x" value="910"/>
@@ -7694,7 +7694,7 @@
 			<int name="tm" value="100000100"/>
 			<string name="tn" value="out01"/>
 		</imgdir>
-		<imgdir name="19">
+		<imgdir name="17">
 			<string name="pn" value="in02"/>
 			<int name="pt" value="2"/>
 			<int name="x" value="3941"/>
@@ -7702,7 +7702,7 @@
 			<int name="tm" value="100000201"/>
 			<string name="tn" value="out02"/>
 		</imgdir>
-		<imgdir name="20">
+		<imgdir name="18">
 			<string name="pn" value="in00"/>
 			<int name="pt" value="2"/>
 			<int name="x" value="4473"/>
@@ -7710,7 +7710,7 @@
 			<int name="tm" value="100000203"/>
 			<string name="tn" value="out00"/>
 		</imgdir>
-		<imgdir name="9">
+		<imgdir name="19">
 			<string name="pn" value="hide01"/>
 			<int name="pt" value="10"/>
 			<int name="x" value="197"/>
@@ -7719,7 +7719,7 @@
 			<string name="tn" value="hide02"/>
 			<string name="image" value=""/>
 		</imgdir>
-		<imgdir name="10">
+		<imgdir name="20">
 			<string name="pn" value="hide02"/>
 			<int name="pt" value="10"/>
 			<int name="x" value="3419"/>

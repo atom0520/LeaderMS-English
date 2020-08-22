@@ -161,7 +161,7 @@ public class LoginServer implements Runnable, LoginServerMBean {
                         AutoRegLimit = Byte.parseByte(prop.getProperty("login.AutoRegisterLimit"));
                         twoWorlds = Boolean.parseBoolean(prop.getProperty("world.twoWorlds", "false"));
 			} catch (Exception e) {
-                        System.out.println("Reconnecting failed" + e);
+                        System.out.println("Reconnecting failed " + e);
                     }
                     worldReady = Boolean.TRUE;
                 }

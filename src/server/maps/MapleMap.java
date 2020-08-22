@@ -42,6 +42,7 @@ import java.util.Calendar;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.logging.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -4603,30 +4604,40 @@ public class MapleMap {
     }
 
   public void movePlayer(MapleCharacter player, Point newPosition) {
-        player.setPosition(newPosition);
+      log.info("MapleMap.movePlayer playerName:{} newPosition:{}", new Object[] {player.getName(), newPosition});
+
+      player.setPosition(newPosition);
          if(player.isFake())
             return;
-        Collection<MapleMapObject> visibleObjects = player.getVisibleMapObjects();
-        MapleMapObject[] visibleObjectsNow = visibleObjects.toArray(new MapleMapObject[visibleObjects.size()]);
-        try {
-            for (MapleMapObject mo : visibleObjectsNow) {
-                if (mo != null) {
-                    if (mapobjects.get(mo.getObjectId()) == mo) {
-                        //updateMapObjectVisibility(player, mo);
-                    } else {
-                        //player.removeVisibleMapObject(mo);
-                    }
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        for (MapleMapObject mo : getMapObjectsInRange(player.getPosition(), 722500, rangedMapobjectTypes)) {
-            if (!player.isMapObjectVisible(mo)) {
-                mo.sendSpawnData(player.getClient());
-                player.addVisibleMapObject(mo);
-            }
-        }
+//        Collection<MapleMapObject> visibleObjects = player.getVisibleMapObjects();
+//        MapleMapObject[] visibleObjectsNow = visibleObjects.toArray(new MapleMapObject[visibleObjects.size()]);
+//        try {
+//            for (MapleMapObject mo : visibleObjectsNow) {
+//                if (mo != null) {
+//                    if (mapobjects.get(mo.getObjectId()) == mo) {
+//                        updateMapObjectVisibility(player, mo);
+//                    } else {
+//                        player.removeVisibleMapObject(mo);
+//                    }
+//                }
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
+//        for (MapleMapObject mo : getMapObjectsInRange(player.getPosition(), 722500, rangedMapobjectTypes)) {
+//            if (!player.isMapObjectVisible(mo)) {
+//                mo.sendSpawnData(player.getClient());
+//                player.addVisibleMapObject(mo);
+//            }
+//        }
+      if(newPosition.getY()!=0 && newPosition.getX()!=0){
+          synchronized (mapobjects) {
+              for (MapleMapObject obj : mapobjects.values()) {
+                  updateMapObjectVisibility(player, obj);
+              }
+          }
+      }
     }
          
 	public MaplePortal findClosestSpawnpoint(Point from) {

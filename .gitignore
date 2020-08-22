@@ -1,12 +1,6 @@
-/BACKUP_wz/
-/build/
-/nbproject/
-/Reports/
-/scripts/MAPLECAKES_npc/
-/Tools/
-
-LeaderMS.lnk
-build.xml
-nbbuild.xml
 GM_Command_Log.rtf
-Broken_Stuff.txt
+Reports/
+MySQL/
+jre/
+.idea/
+out/

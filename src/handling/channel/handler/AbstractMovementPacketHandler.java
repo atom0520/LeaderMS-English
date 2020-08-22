@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import handling.AbstractMaplePacketHandler;
+import handling.PacketProcessor;
 import server.maps.AnimatedMapleMapObject;
 import server.movement.AbsoluteLifeMovement;
 import server.movement.ChairMovement;
@@ -41,6 +42,7 @@ import tools.data.input.LittleEndianAccessor;
 public abstract class AbstractMovementPacketHandler extends AbstractMaplePacketHandler {
 
 //	private static Logger log = LoggerFactory.getLogger(AbstractMovementPacketHandler.class);
+	private static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(AbstractMovementPacketHandler.class);
 
 	protected List<LifeMovementFragment> parseMovement(LittleEndianAccessor lea) {
 		List<LifeMovementFragment> res = new ArrayList<LifeMovementFragment>();
@@ -150,10 +152,12 @@ public abstract class AbstractMovementPacketHandler extends AbstractMaplePacketH
 	}
 
 	protected void updatePosition(List<LifeMovementFragment> movement, AnimatedMapleMapObject target, int yoffset) {
+		log.info("AbstractMovementPacketHandler.updatePosition");
 		for (LifeMovementFragment move : movement) {
 			if (move instanceof LifeMovement) {
 				if (move instanceof AbsoluteLifeMovement) {
 					Point position = ((LifeMovement) move).getPosition();
+					log.info("position:{}", new Object[] {position});
 					position.y += yoffset;
 					target.setPosition(position);
 				}

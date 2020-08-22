@@ -2222,6 +2222,7 @@ public class MapleCharacter extends AbstractAnimatedMapleMapObject implements In
        
 
     public void changeMap(final MapleMap to, final Point pos) {
+        log.info("MapleCharacter.changeMap to:{} pos:{}", new Object[] {to, pos});
         /*getClient().getSession().write(MaplePacketCreator.spawnPortal(map.getId(), to.getId(), pos));
         if (getParty() != null) {
         getClient().getSession().write(MaplePacketCreator.partyPortal(map.getId(), to.getId(), pos));
@@ -2231,6 +2232,7 @@ public class MapleCharacter extends AbstractAnimatedMapleMapObject implements In
     }
        
     public void changeMap(final MapleMap to, final MaplePortal pto) {
+        log.info("MapleCharacter.changeMap to.getId():{} pto.getId():{}", new Object[] {to.getId(), pto.getId()});
         MaplePacket warpPacket = MaplePacketCreator.getWarpToMap(to, pto.getId(), this);
         changeMapInternal(to, pto.getPosition(), warpPacket);
     }
@@ -2247,6 +2249,7 @@ public class MapleCharacter extends AbstractAnimatedMapleMapObject implements In
     }
 
    private void changeMapInternal(final MapleMap to, final Point pos, MaplePacket warpPacket) {
+       log.info("MapleCharacter.changeMapInternal to.getId():{} pos:{} warpPacket:{}", new Object[] {to.getId(), pos, warpPacket});
         int a = 0, b = 0;
         MapleParty e = null;
         if (this.getParty() != null) {
@@ -2282,6 +2285,7 @@ public class MapleCharacter extends AbstractAnimatedMapleMapObject implements In
                 map.removePlayer(MapleCharacter.this);
                 if (getClient().getChannelServer().getPlayerStorage().getCharacterById(getId()) != null) {
                     map = to;
+                    log.info("setPosition pos:{}", new Object[] {pos});
                     setPosition(pos);
                     to.addPlayer(MapleCharacter.this);
                     if (to.isCPQMap()) {

@@ -37,6 +37,7 @@ public abstract class AbstractMapleMapObject implements MapleMapObject {
 
 	@Override
 	public void setPosition(Point position) {
+
 		this.position.x = position.x;
 		this.position.y = position.y;
 	}
